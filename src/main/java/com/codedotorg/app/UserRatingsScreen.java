@@ -20,12 +20,13 @@ public class UserRatingsScreen extends AppScreen {
         setAndShowScene(layout);
     }
 
-    // This is the key method you need to implement!
+    // This method creates the layout for the user's ratings screen
     public VBox createUserRatingsLayout() {
         VBox vbox = new VBox(10);
         vbox.setPadding(new Insets(10, 10, 10, 10));
         User currentUser = MovieApp.getCurrentUser();
 
+        // Display the user's name at the top
         Label nameLabel = new Label(currentUser.getName() + "'s Ratings");
         vbox.getChildren().add(nameLabel);
 
