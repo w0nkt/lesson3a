@@ -84,12 +84,16 @@ public class WelcomeScreen extends AppScreen {
      * 
      * @param username the username of the user to set or switch to
      */
-    public void setOrSwitchUser(String username) {
-        AppLogic logic = new AppLogic();
-        User currentUser = logic.createNewUser(username);;
+ public void setOrSwitchUser(String username) {
+    AppLogic logic = new AppLogic();
+    User foundUser = logic.getExistingUser(MovieApp.getUsers(), username);
 
-        MovieApp.addUser(currentUser);
-        MovieApp.setCurrentUser(currentUser);
+    if (foundUser != null) {
+        MovieApp.setCurrentUser(foundUser);
+    } else {
+        User newUser = logic.createNewUser(username);
+        MovieApp.addUser(newUser);
+        MovieApp.setCurrentUser(newUser);
     }
-
 }
+
