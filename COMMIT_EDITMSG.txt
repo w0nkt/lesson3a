@@ -1,0 +1,27 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   target/classes/com/codedotorg/App.class
+#	modified:   target/classes/com/codedotorg/AppLogic.class
+#	modified:   target/classes/com/codedotorg/Movie.class
+#	modified:   target/classes/com/codedotorg/MovieDatabase.class
+#	modified:   target/classes/com/codedotorg/Rating.class
+#	modified:   target/classes/com/codedotorg/User.class
+#	modified:   target/classes/com/codedotorg/app/AppScreen.class
+#	modified:   target/classes/com/codedotorg/app/MainScreen.class
+#	modified:   target/classes/com/codedotorg/app/MovieApp.class
+#	modified:   target/classes/com/codedotorg/app/RateMovieScreen.class
+#	modified:   target/classes/com/codedotorg/app/UserRatingsScreen.class
+#	modified:   target/classes/com/codedotorg/app/ViewMoviesScreen.class
+#	modified:   target/classes/com/codedotorg/app/ViewUsersScreen.class
+#	modified:   target/classes/com/codedotorg/app/WelcomeScreen.class
+#	modified:   target/classes/module-info.class
+#	new file:   target/classes/styles.css
+#	modified:   target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+#	modified:   target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+#

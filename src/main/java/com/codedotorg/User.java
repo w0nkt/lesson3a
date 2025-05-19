@@ -1,3 +1,5 @@
+// File: src/com/codedotorg/User.java
+
 package com.codedotorg;
 
 import java.util.ArrayList;
@@ -57,5 +59,4 @@ public class User {
     public String toString() {
         return name + ": " + ratings.size() + " movies rated";
     }
-
 }

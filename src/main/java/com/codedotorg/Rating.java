@@ -1,3 +1,5 @@
+// File: src/com/codedotorg/Rating.java
+
 package com.codedotorg;
 
 public class Rating {
@@ -60,5 +62,4 @@ public class Rating {
     public String toString() {
         return movie + "\nYour Rating: " + score;
     }
-
 }

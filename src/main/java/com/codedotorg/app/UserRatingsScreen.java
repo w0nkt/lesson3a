@@ -1,89 +1,48 @@
 package com.codedotorg.app;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import com.codedotorg.Movie;
+import com.codedotorg.MovieApp;
 import com.codedotorg.Rating;
-
+import com.codedotorg.User;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+import java.util.ArrayList;
 
 public class UserRatingsScreen extends AppScreen {
 
-    /**
-     * This class represents the user ratings screen of the application.
-     * It extends the Screen class and takes in a Stage object, width and height as parameters.
-     * The constructor initializes the UserRatingsScreen object with the given parameters.
-     *
-     * @param window The Stage object representing the window of the application.
-     * @param width The width of the user ratings screen.
-     * @param height The height of the user ratings screen.
-     */
     public UserRatingsScreen(Stage window, int width, int height) {
         super(window, width, height);
     }
 
-    /**
-     * Displays the user ratings screen by creating a VBox layout and setting it as the scene.
-     */
     public void showScene() {
-        VBox userRatingsLayout = createUserRatingsScreen();
-        setAndShowScene(userRatingsLayout);
+        VBox layout = createUserRatingsLayout();
+        setAndShowScene(layout);
     }
 
-    /**
-     * Creates a VBox layout for the user ratings screen.
-     * 
-     * @return the VBox layout for the user ratings screen
-     */
-    public VBox createUserRatingsScreen() {
-        VBox tempLayout = new VBox(10);
-        tempLayout.setPadding(new Insets(10, 10, 10, 10));
+    // This is the key method you need to implement!
+    public VBox createUserRatingsLayout() {
+        VBox vbox = new VBox(10);
+        vbox.setPadding(new Insets(10, 10, 10, 10));
+        User currentUser = MovieApp.getCurrentUser();
 
-        List<Node> componentsList = createComponents();
+        Label nameLabel = new Label(currentUser.getName() + "'s Ratings");
+        vbox.getChildren().add(nameLabel);
 
-        tempLayout.getChildren().addAll(componentsList);
+        ArrayList<Rating> userRatings = currentUser.getRatings();
 
-        return tempLayout;
+        if (userRatings.isEmpty()) {
+            vbox.getChildren().add(new Label("You have not rated any movies yet."));
+        } else {
+            ListView<String> ratingsList = new ListView<>();
+            for (Rating rating : userRatings) {
+                String item = rating.getMovie().getTitle() + " (" + rating.getMovie().getReleaseYear() + "): " + rating.getScore();
+                ratingsList.getItems().add(item);
+            }
+            vbox.getChildren().add(ratingsList);
+        }
+
+        vbox.getChildren().add(getBackButton());
+        return vbox;
     }
-
-    /**
-     * Creates and returns a list of UI components for the user ratings screen.
-     * The list includes a user label, a list view, and a back button.
-     *
-     * @return a list of UI components for the user ratings screen
-     */
-    public List<Node> createComponents() {
-        Label userLabel = new Label();
-        ListView<Rating> listView = createListView();
-        Button backButton = getBackButton();
-
-        List<Node> componentsList = Arrays.asList(userLabel, listView, backButton);
-
-        return componentsList;
-    }
-
-    /**
-     * Creates a ListView of user ratings.
-     * 
-     * @return a ListView of Rating objects.
-     */
-    public ListView<Rating> createListView() {
-        ListView<Rating> listView = new ListView<Rating>();
-        
-
-
-
-        
-
-        return listView;
-    }
-
 }

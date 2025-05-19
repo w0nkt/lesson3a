@@ -1,0 +1,15 @@
+com/codedotorg/app/AppScreen.class
+com/codedotorg/Rating.class
+com/codedotorg/app/MainScreen.class
+com/codedotorg/MovieDatabase.class
+com/codedotorg/app/UserRatingsScreen.class
+com/codedotorg/app/ViewUsersScreen.class
+com/codedotorg/App.class
+module-info.class
+com/codedotorg/app/WelcomeScreen.class
+com/codedotorg/app/RateMovieScreen.class
+com/codedotorg/Movie.class
+com/codedotorg/AppLogic.class
+com/codedotorg/User.class
+com/codedotorg/app/ViewMoviesScreen.class
+com/codedotorg/app/MovieApp.class

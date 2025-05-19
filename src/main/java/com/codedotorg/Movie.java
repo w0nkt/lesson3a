@@ -1,3 +1,5 @@
+// File: src/com/codedotorg/Movie.java
+
 package com.codedotorg;
 
 import java.util.ArrayList;
@@ -92,5 +94,4 @@ public class Movie {
     public String toString() {
         return title + " (" + releaseYear + "): " + getAverageRating();
     }
-
 }
